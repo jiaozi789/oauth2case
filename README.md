@@ -1,5 +1,14 @@
 OATH2授权模拟
 =====================
+## 使用技术 ##
+ 使用java开源框架实现
+ * MAVEN构建
+ * SPRINGBOOT快速SPRING开发
+ * SHIRO 权限控制
+ * OLTU 解析请求参数 生成OAUTH响应
+ * SPRING-DATA-JPA写入资源和权限数据
+ * SPRING-DATA-REDIS用于缓存授权码和TOKEN
+
 ## 各模块介绍 ##
 ### oauth_blog ###
   是oauth2中的资源服务器 提供模拟简单的登录 登录后查看博客文章  可以新增博客 使用shiro进行了authc的登录认证
