@@ -56,6 +56,7 @@ src/main/java下的cn.et.Main是启动blog的主类运行需要先到mysql下创
 跳转到认证服务器认证 认证服务器跳转到资源服务器登录 用户点击授权后 跳转到认证服务器获取授权 通过授权码获取令牌 通过令牌去资源服务器获取对应的资源（博客）
 #### 项目配置 ####
    直接运行 src/main/java下的cn.et.Main
-   访问地址 http://localhost:8088/index.jsp 点击超链接就可以模拟整个授权过程 必须是 oauth_blog和oauth_server都启动后
+   访问地址 http://localhost:8088/index.jsp 点击超链接就可以模拟整个授权过程 必须先启动 oauth_blog和oauth_server
   
-  
+## 3.问题 ##  
+  该项目中从客户端跳转到授权服务器要先登录博客资源服务器 这个过程涉及到跨域 所以每次跳转都需要重新登录 可以在前端用ngix不同路径转发控制这个问题 
