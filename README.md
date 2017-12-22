@@ -1,7 +1,7 @@
 OATH2授权模拟
 =====================
 ## 开发技术 ##
- ###框架
+ ### 框架 ###
  使用java开源框架实现
  * MAVEN构建
  * SPRINGBOOT快速SPRING开发
@@ -9,7 +9,7 @@ OATH2授权模拟
  * OLTU 解析请求参数 生成OAUTH响应
  * SPRING-DATA-JPA写入资源和权限数据
  * SPRING-DATA-REDIS用于缓存授权码和TOKEN
-###数据存储
+### 数据存储 ###
  * redis存储授权码和TOKEN
  * mysql存储用户信息和博客信息
 ## 各模块介绍 ##
