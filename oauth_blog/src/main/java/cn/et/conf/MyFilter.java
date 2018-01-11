@@ -60,7 +60,7 @@ public class MyFilter extends AuthorizationFilter {
 		urls.put("/login.html", "anon");
 		urls.put("/loginBlog", "anon");
 		urls.put("/un.jsp", "anon");
-		urls.put("/queryBlogByToken", "anon");
+		urls.put("/queryBlogByToken", "anon"); 
 		urls.put("/query.jsp", "authc");
 		urls.put("/auth.jsp", "anon"); 
 		urls.put("/add.jsp", "roles[role1]");
