@@ -44,7 +44,11 @@ src/main/java下的cn.et.Main是启动blog的主类运行需要先到mysql下创
   是oauth2的授权服务器 提供转向到登录页 提供获取授权码 提供获取token
 #### 项目配置 ####  
   数据库配置同 oauth_blog 
-  认证服务器需要将授权码和token存储在redis 启动一个redis服务 
+  认证服务器需要将授权码和token存储在redis 启动一个redis服务
+  mysql中创建数据库myauth
+  ```sql
+  create database myauth
+```
   修改application.properties
   ```properties
   spring.redis.host=localhost
