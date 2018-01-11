@@ -63,6 +63,7 @@ public class MyFilter extends AuthorizationFilter {
 		urls.put("/queryBlogByToken", "anon"); 
 		urls.put("/query.jsp", "authc");
 		urls.put("/auth.jsp", "authc"); 
+		urls.put("/favicon.ico", "anon");
 		urls.put("/add.jsp", "roles[role1]");
 	}
 	/**
@@ -73,9 +74,14 @@ public class MyFilter extends AuthorizationFilter {
 			throws Exception {
 		HttpServletRequest req=(HttpServletRequest)request;
 		String url=req.getRequestURI();
+		Subject subject = getSubject(request, response);
 		//通过url获取授权类型
 		String urlAuth=urls.get(url);
-		if(urlAuth==null){
+		//如果没有配置权限 只要登录了就通过
+		if(urlAuth==null && subject.isAuthenticated()){
+			return true;
+		}
+		if(urlAuth==null && !subject.isAuthenticated()){
 			return false;
 		}
 		//配置的过滤器是anon 直接放过
@@ -83,7 +89,6 @@ public class MyFilter extends AuthorizationFilter {
 			return true;
 		}
 		//配置的是authc 判断当前用户是否认证通过
-		Subject subject = getSubject(request, response);
 		if(urlAuth.startsWith("authc")){
 			return subject.isAuthenticated();
 		}

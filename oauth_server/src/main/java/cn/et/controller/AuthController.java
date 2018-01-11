@@ -119,7 +119,7 @@ public class AuthController {
 			 
 			return "redirect:"+resp.getLocationUri();
 		} catch (Exception e) {
-			return new ResponseEntity<String>("未知异常",HttpStatus.valueOf(500));
+			return new ResponseEntity<String>("未知异常 "+e.getMessage(),HttpStatus.valueOf(500));
 		}
 	}
 	static final String AUTHCONFIRMPAGE="http://localhost:8888/auth.jsp";
