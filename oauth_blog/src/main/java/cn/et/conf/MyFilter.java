@@ -31,7 +31,7 @@ public class MyFilter extends AuthorizationFilter {
 	 * @param url
 	 * @return
 	 */
-	public static boolean matchUrl(String regex,String url){
+	public static boolean matchUrl(String regex,String url){ 
 		regex=regex.replaceAll("/+", "/");
 		if(regex.equals(url)){
 			return true;
